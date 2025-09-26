@@ -49,4 +49,26 @@ elif choice == "C":
 
 else:
     print("Your information is unavailable.")
+study_options = ["Programming", "Math", "English", "History"]
 
+choice2 = input("Enter your choice of study from the list: Programming, Math, English, or History")
+
+#Recommended studying techniques for each study option
+if choice2 in study_options:
+    print(f"You have chosen {choice2}.")
+    if (choice2 in ["Programming"]) and (current_gpa >= 3.5 and social_points >= 25):
+        print("Using interactive learning platforms like Zybooks and taking university courses are recommended.")
+    elif (choice2 in ["Math"]) and (current_gpa >= 3.5 and social_points >= 25):
+        print("Solving problems and using online tools like KhanAcademy and Youtube is recommended.")
+    elif (choice2 in ["English"]) and (current_gpa >= 3.5 or social_points >= 25):
+        print("Using flashcards and constanly reviewing notes are recommended.")
+    elif (choice2 in ["History"]) and (current_gpa >= 3.5 or social_points >=25):
+        print("Making accurate timelines and graphic organizers are recommended.")
+    elif choice2 not in study_options:
+        print("Invalid study options.")
+else:
+    print("Please choose a valid study option from the list: Programming, Math, English, or History.")
+
+
+
+    
