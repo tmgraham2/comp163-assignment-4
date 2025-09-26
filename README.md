@@ -14,7 +14,7 @@ print("Choose your course load: ")
 print("A) Light (12 credits)")
 print("B) Standard (15 credits)")
 print("C) Heavy (18 credits)")
-
+# Allows users to choose their course load
 choice = input("Your choices: ")
 
 if choice == "A":
@@ -53,7 +53,7 @@ study_options = ["Programming", "Math", "English", "History"]
 
 choice2 = input("Enter your choice of study from the list: Programming, Math, English, or History")
 
-#Recommended studying techniques for each study option
+# Recommended studying techniques for each study option
 if choice2 in study_options:
     print(f"You have chosen {choice2}.")
     if (choice2 in ["Programming"]) and (current_gpa >= 3.5 and social_points >= 25):
@@ -68,6 +68,30 @@ if choice2 in study_options:
         print("Invalid study options.")
 else:
     print("Please choose a valid study option from the list: Programming, Math, English, or History.")
+
+# 3 different endings based on accumulated stats
+final_gpa = current_gpa + 0.3
+
+if student_name is not None:
+    print("Your final stats are finalized!")
+    if final_gpa >= 3.8 and social_points >= 25:
+            print("You have a well balanced academic life and social life!")
+    elif final_gpa >= 3.5 and social_points <= 20:
+            print("You have a great GPA, but your social points suggests that you should go to more social events.")
+    elif final_gpa <= 3.0 and social_points >= 30:
+            print("You have a great social life, but your GPA suggests that you should dedicate more time to studying.")
+    elif final_gpa <= 3.0 and social_points <= 20:
+            ("Your stats suggests that your struggling with your academic life and social life. It's recommended to utilize on campus resources if you are needing help.")
+else:
+    print("All fields aren't complete.")
+# Outputs user's final stats
+print("\nFINAL STATISTICS")
+print(f"Student Name: {student_name}")
+print(f"Final GPA: {final_gpa}")
+print(f"Study Hours: {study_hours}")
+print(f"Social Points: {social_points}")
+print(f"Stress Level: {stress_level}")
+    
 
 
 
